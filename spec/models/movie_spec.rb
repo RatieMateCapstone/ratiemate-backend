@@ -4,7 +4,8 @@ RSpec.describe Movie, type: :model do
   let(:user) { User.create(
     email: 'test1@example.com',
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    username: 'firstuser15'
     )
   }
   it 'should validate title'do
@@ -17,6 +18,7 @@ RSpec.describe Movie, type: :model do
       description: 'Ex Marine who turned his life to the lord has now been called back into action',
       platform: 'https://www.youtube.com/'
     )
+    p user.errors
     expect(movie.errors[:title]).to include "can't be blank"
   end
   it 'should validate genre'do

@@ -4,7 +4,8 @@ RSpec.describe "Movies", type: :request do
   let(:user) {User.create(
     email: 'test1@example.com',
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    username: 'firstuser15'
   )}
 
     describe "GET /create" do
