@@ -1,24 +1,3 @@
-# README
+Implementing Device Dependencies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ Devise created a user table but with different attributes. user name not showing that was made with devise. Will check on frontend side when applicable if user:name shows in form.
