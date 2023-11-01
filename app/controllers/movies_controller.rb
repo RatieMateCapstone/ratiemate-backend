@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
     def index 
-        movies = Movies.all 
+        movies = Movie.all 
         render json: movies
     end
     def create
-        movie = Movies.create(movie_params)
+        movie = Movie.create(movie_params)
         if movie.valid?
           render json: movie
         else
