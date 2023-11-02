@@ -8,7 +8,7 @@ RSpec.describe "Movies", type: :request do
     username: 'firstuser15'
   )}
 
-    describe "POST /create" do
+    describe "GET /index" do
     it 'saves valid intry into the database' do
       movie = user.movies.create(
         title: 'born again',
@@ -19,14 +19,14 @@ RSpec.describe "Movies", type: :request do
         description: 'Ex Marine who turned his life to the lord has now been called back into action',
         platform: 'https://www.youtube.com/'
       )
-      post '/movies' 
+      get '/movies' 
       movie = JSON.parse(response.body)
 
       expect(response).to have_http_status(200) 
       expect(movie.first['title']).to eq('born again')
     end 
   end
-    describe "GET /index" do
+    describe "POST/create" do
       it 'returns all the movies' do
         movie_params = {
           movie: {
@@ -42,7 +42,7 @@ RSpec.describe "Movies", type: :request do
           }
           
         }
-        get'/movies', params: movie_params 
+        post'/movies', params: movie_params 
         movie = JSON.parse(response.body)
   
         expect(response).to have_http_status(200) 
