@@ -195,4 +195,59 @@ RSpec.describe "Movies", type: :request do
         expect(movie_error['user_id']).to include("can't be blank")
       end
   end
+
+  describe "PATCH/update" do
+    it 'udates all the movies' do
+      movie = user.movies.create(
+        title: 'born again',
+        genre: 'action',
+        image: 'https://images.unsplash.com/photo-1627465688839-f088954a40a0?auto=format&fit=crop&q=80&w=982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        trailer: 'https://www.youtube.com/watch?v=V-yt7-DJZyY&ab_channel=Soundridemusic-NoCopyrightMusic',
+        rating: 4,
+        description: 'Ex Marine who turned his life to the lord has now been called back into action',
+        platform: 'https://www.youtube.com/'
+      )
+
+      get '/movies'
+      first_movie = Movie.first
+
+      movie_params = {
+        movie: {
+          title: 'born yesterday',
+          genre: 'action',
+          image: 'https://images.unsplash.com/photo-1627465688839-f088954a40a0?auto=format&fit=crop&q=80&w=982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          trailer: 'https://www.youtube.com/watch?v=V-yt7-DJZyY&ab_channel=Soundridemusic-NoCopyrightMusic',
+          rating: 4,
+          description: 'Ex Marine who turned his life to the lord has now been called back into action',
+          platform: 'https://www.youtube.com/',
+          user_id: user.id
+        }   
+      }
+
+      patch "/movies/#{first_movie.id}", params: movie_params 
+      movie = JSON.parse(response.body)
+      
+      expect(response).to have_http_status(200) 
+      movie = Movie.first
+      expect(movie.title).to eq('born yesterday')  
+    end 
+  end
+
+  describe "DELETE/destroy" do
+    it 'deletes a movie' do
+      movie1 = user.movies.create(
+        title: 'born again',
+        genre: 'action',
+        image: 'https://images.unsplash.com/photo-1627465688839-f088954a40a0?auto=format&fit=crop&q=80&w=982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        trailer: 'https://www.youtube.com/watch?v=V-yt7-DJZyY&ab_channel=Soundridemusic-NoCopyrightMusic',
+        rating: 4,
+        description: 'Ex Marine who turned his life to the lord has now been called back into action',
+        platform: 'https://www.youtube.com/'
+      )
+      
+      first_movie = Movie.first
+      delete "/movies/#{first_movie.id}"   
+      expect(response).to have_http_status(:no_content) 
+    end 
+  end
 end
