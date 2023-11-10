@@ -9,7 +9,7 @@ movie1 = [
         trailer: 'https://www.youtube.com/watch?v=V-yt7-DJZyY&ab_channel=Soundridemusic-NoCopyrightMusic',
         rating: 4,
         description: 'Ex Marine who turned his life to the lord has now been called back into action',
-        platform: 'https://www.youtube.com/'
+        platform: 'Youtube'
     },
 ]
 
