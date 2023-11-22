@@ -3,16 +3,15 @@ class MoviesController < ApplicationController
         movies = Movie.all 
         render json: movies
     end
-    def create
-        movie = Movie.create(movie_params)
-        if movie.valid?
-          render json: movie
-        else
-          render json: movie.errors, status: 422
-        end
-      end
-     
-      def update
+def create
+  @movie = Movie.new(movie_params)
+  if @movie.save
+    render json: @movie, status: :created, location: @movie
+  else
+    render json: @movie.errors, status: :unprocessable_entity
+  end
+end
+    def update
         edit_movie = Movie.find(params[:id])
         edit_movie.update(movie_params)
         if edit_movie.valid?
