@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins 'frontend-ratiemate.onrender.com'
+      origins 'https://frontend-ratiemate.onrender.com'
       resource '*',
       headers: ["Authorization"],
       expose: ["Authorization"],
