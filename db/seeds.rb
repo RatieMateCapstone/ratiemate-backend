@@ -5,7 +5,7 @@ movie1 = [
     {
         title: 'born again',
         genre: 'action',
-        image: 'https://images.unsplash.com/photo-1627465688839-f088954a40a0?auto=format&fit=crop&q=80&w=982&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        image: 'https://m.media-amazon.com/images/M/MV5BM2E4YTM1OWQtNjlmOC00MTM3LWEwZTItODY0ODIzMjQ1NTY3XkEyXkFqcGdeQXVyNTk3NTM0MzY@._V1_FMjpg_UX1000_.jpg',
         trailer: 'https://www.youtube.com/watch?v=V-yt7-DJZyY&ab_channel=Soundridemusic-NoCopyrightMusic',
         rating: 4,
         description: 'Ex Marine who turned his life to the lord has now been called back into action',
@@ -28,7 +28,7 @@ movie3 = [
     {
         title: 'Whispers Of Decay',
         genre: 'Horror',
-        image: 'https://unsplash.com/photos/person-behind-fog-glass-ZC0EbdLC8G0',
+        image: 'https://i.scdn.co/image/ab67616d0000b2736f51e35a27850178d6ba9b5d',
         trailer: 'https://www.youtube.com/watch?v=E_Ty9L3P3Ls&list=PLY4oAfouVgHI_DzPRn4ixYibkM03x-QIA&ab_channel=ElysiumAudioLabs',
         rating: 2,
         description: "Masked man hunting people",
