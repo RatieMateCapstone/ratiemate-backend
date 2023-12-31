@@ -37,16 +37,16 @@ movie3 = [
 ]
 
 movie1.each do |movie| 
-    user1.movies.create!(movie)
+    user1.movies.create(movie)
     p "creating #{movie}"
 end
 
 movie2.each do |movie| 
-    user2.movies.create!(movie)
+    user2.movies.create(movie)
     p "creating #{movie}"
 end
 
 movie3.each do |movie| 
-    user2.movies.create!(movie)
+    user2.movies.create(movie)
     p "creating #{movie}"
 end
